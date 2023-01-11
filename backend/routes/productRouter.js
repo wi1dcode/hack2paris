@@ -14,17 +14,6 @@ router.post(
       min: 4,
       max: 10,
     }),
-    check("mail")
-      .trim()
-      .normalizeEmail()
-      .isEmail()
-      .withMessage("Invalid email")
-      .custom(async (email) => {
-        const existingUser = await repo.getOneBy({ email })
-        if (existingUser) {
-          throw new Error("Email already in use")
-        }
-      }),
   ],
   controller.signup
 )
