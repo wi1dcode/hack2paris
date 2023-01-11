@@ -1,6 +1,6 @@
 const express = require("express")
 const mongoose = require("mongoose")
-const authRouter = require("./authRouter")
+const authRouter = require("./routes/authRouter")
 const PORT = process.env.PORT || 5000
 require("dotenv").config()
 const { DB_USER, DB_HOST, DB_PASS } = process.env
