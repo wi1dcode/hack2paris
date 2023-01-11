@@ -1,7 +1,5 @@
 const { Schema, model } = require("mongoose");
 
-// model of user
-
 const Product = new Schema(
   {
     name: { type: String, unique: true, required: true },
