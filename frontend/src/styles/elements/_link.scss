@@ -1,0 +1,13 @@
+.iconLink{
+    color: $secondaryContrast;
+    text-decoration: none;
+    &:hover{
+        color: $primaryDark;
+        span{
+            text-decoration: underline;
+        }
+    }
+    &.active{
+        color: $primaryMain;
+    }
+}
