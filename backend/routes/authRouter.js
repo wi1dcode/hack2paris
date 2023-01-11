@@ -1,9 +1,8 @@
 const Router = require("express")
 const router = new Router()
-const controller = require("./authController")
+const controller = require("../controllers/authController")
 const { check } = require("express-validator")
-const authMiddleware = require("./middlewares/authMiddleware")
-const roleMiddleware = require("./middlewares/roleMiddleware")
+const authMiddleware = require("../middlewares/authMiddleware")
 
 // Routes
 
@@ -19,6 +18,6 @@ router.post(
   controller.signup
 )
 router.post("/login", controller.login)
-router.get("/users", roleMiddleware(["Admin"]), controller.getUsers)
+router.get("/users", controller.getUsers)
 
 module.exports = router

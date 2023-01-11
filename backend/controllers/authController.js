@@ -1,16 +1,14 @@
-const User = require("./models/User")
-const Role = require("./models/Role")
+const User = require("../models/User")
 const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
 const { validationResult } = require("express-validator")
-const { secret } = require("./config")
+require("dotenv").config()
 
-const generateAccessToken = (id, roles) => {
+const generateAccessToken = (id) => {
   const payload = {
     id,
-    roles,
   }
-  return jwt.sign(payload, secret, { expiresIn: "24h" })
+  return jwt.sign(payload, process.env.SECRET, { expiresIn: "24h" })
 }
 
 class authController {
@@ -31,12 +29,10 @@ class authController {
       // hash password
       const hashPassword = bcrypt.hashSync(password, 7)
       // find user role
-      const userRole = await Role.findOne({ value: "User" })
       // create user with hash password and user role
       const user = new User({
         username,
         password: hashPassword,
-        roles: [userRole.value],
       })
       // save data to db
       await user.save()
@@ -58,7 +54,7 @@ class authController {
       if (!validPassword) {
         return res.status(400).json({ message: `Wrong password!` })
       }
-      const token = generateAccessToken(user._id, user.roles)
+      const token = generateAccessToken(user._id)
       return res.json({ token })
     } catch (e) {
       console.log(e)
@@ -67,12 +63,6 @@ class authController {
   }
   async getUsers(req, res) {
     try {
-      // --- FOR CREATE MODEL IN DATABASE ---
-      // const userRole = new Role()
-      // const adminRole = new Role({ value: "Admin" })
-      // await userRole.save()
-      // await adminRole.save()
-
       const users = await User.find()
       res.json(users)
       res.json("getusers: server work")
