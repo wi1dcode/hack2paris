@@ -16,11 +16,9 @@ import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 
-
 import "./styles/App.scss";
 
 import theme from "./services/theme";
-
 
 function App() {
   return (
