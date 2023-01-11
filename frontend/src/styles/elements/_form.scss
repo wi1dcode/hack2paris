@@ -1,0 +1,22 @@
+.form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    input, label, textarea, fieldset, p{
+        color: $secondaryContrast;
+    }
+
+    p{
+        margin: 3px 0 0;
+    }
+
+    input, textarea, fieldset{
+        border-color: $secondaryContrast;
+    }
+
+
+}

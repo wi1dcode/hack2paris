@@ -1,0 +1,18 @@
+//--- ORDRE IMPORTANT --- NE PAS TOUCHER
+
+// SETTINGS
+@import "settings/_variables", "settings/_mixin", "settings/_fonts";
+
+// GENERIC
+@import "generic/_reset", "generic/_normalize", "generic/_base"; // (box-sizing, font size for rem, font-weight Hn, ...)
+
+// ELEMENTS (only one tag components )
+@import "elements/_container", "elements/_link", "elements/_form";
+
+//COMPONENTS (multiples tags components)
+@import "components/_header", "components/_nav";
+
+// PAGES
+@import "pages/_home", "pages/list", "pages/vehicle", "pages/user", "pages/profile";
+
+////////////: FIN IMPORTATION
