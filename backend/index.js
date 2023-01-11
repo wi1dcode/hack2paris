@@ -1,6 +1,7 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const authRouter = require("./routes/authRouter")
+const productRouter = require("./routes/productRouter")
 const PORT = process.env.PORT || 5000
 require("dotenv").config()
 const { DB_USER, DB_HOST, DB_PASS } = process.env
@@ -9,6 +10,7 @@ const app = express()
 
 app.use(express.json())
 app.use("/auth", authRouter)
+app.use("/", productRouter)
 
 // Connecting mongoDB
 
