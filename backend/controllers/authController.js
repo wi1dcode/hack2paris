@@ -20,7 +20,7 @@ class authController {
         return res.status(400).json({ message: "Error in signup", errors })
       }
       // destruct
-      const { username, password } = req.body
+      const { username, password, mail, city } = req.body
       // find user in db, if not continue
       const candidate = await User.findOne({ username })
       if (candidate) {
@@ -33,6 +33,8 @@ class authController {
       const user = new User({
         username,
         password: hashPassword,
+        mail,
+        city,
       })
       // save data to db
       await user.save()
