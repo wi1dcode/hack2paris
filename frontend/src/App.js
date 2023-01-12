@@ -1,3 +1,4 @@
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import { ThemeProvider } from "@mui/material/styles";
@@ -15,7 +16,8 @@ import User from "./pages/User";
 import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-
+import Suggest from "./pages/Suggest";
+import Messages from "./pages/Messages";
 
 import "./styles/App.scss";
 
@@ -35,6 +37,8 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/suggest" element={<Suggest />} />
+            <Route path="/messages" element={<Messages />} />
           </Route>
         </Routes>
       </Router>
