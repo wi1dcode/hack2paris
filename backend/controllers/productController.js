@@ -5,9 +5,9 @@ require("dotenv").config()
 class productController {
   async getProducts(req, res) {
     try {
-      const products = await Product.find()
-      res.json(products)
-      return res.sendStatus(200)
+      const products = await Product.find();
+      res.json(products);
+      return res.status(200);
     } catch (e) {
       res.status(400).json({ message: "Error get users" })
     }
@@ -15,10 +15,10 @@ class productController {
 
   async getProductById(req, res) {
     try {
-      const { _id } = req.body
-      const products = await Product.findOne(_id)
-      res.json(products)
-      return res.sendStatus(200)
+      const { _id } = req.body;
+      const products = await Product.findOne(_id);
+      res.json(products);
+      return res.status(200);
     } catch (e) {
       res.status(400).json({ message: "Error get product" })
     }
