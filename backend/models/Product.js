@@ -6,7 +6,7 @@ const Product = new Schema(
     price: { type: Number, required: true },
     localisation: { type: String, required: true },
     owner: {
-      type: Schema.Types.ObjectId,
+      type: String,
       required: true,
     },
     isAvailable: { type: Boolean, required: true },

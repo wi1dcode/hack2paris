@@ -39,18 +39,16 @@ class productController {
       category,
       renting_date,
       photo,
-      // owner
     } = req.body;
     const product = new Product({
       name,
       price,
       localisation,
-      owner: req.user.id,
+      owner: req.user.username,
       isAvailable: true,
       description,
       category,
       photo,
-      // owner
     });
     await product.save();
     return res.json({ message: "Products posted !" });
