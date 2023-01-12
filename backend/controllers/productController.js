@@ -39,8 +39,7 @@ class productController {
       category,
       renting_date,
       photo,
-      // owner
-    } = req.body
+    } = req.body;
     const product = new Product({
       name,
       price,
@@ -50,10 +49,9 @@ class productController {
       description,
       category,
       photo,
-      // owner
-    })
-    await product.save()
-    return res.json({ message: "Products posted !" })
+    });
+    await product.save();
+    return res.json({ message: "Products posted !" });
   }
 
   async rentProduct(req, res) {
