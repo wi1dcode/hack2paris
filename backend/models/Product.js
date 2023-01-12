@@ -1,4 +1,4 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model } = require("mongoose")
 
 const Product = new Schema(
   {
@@ -6,7 +6,7 @@ const Product = new Schema(
     price: { type: Number, required: true },
     localisation: { type: String, required: true },
     owner: {
-      type: Schema.Types.ObjectId,
+      type: String,
       required: true,
     },
     isAvailable: { type: Boolean, required: true },
@@ -25,6 +25,6 @@ const Product = new Schema(
   {
     versionKey: false,
   }
-);
+)
 
-module.exports = model("Product", Product);
+module.exports = model("Product", Product)

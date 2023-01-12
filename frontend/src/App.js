@@ -1,4 +1,6 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 
 import { ThemeProvider } from "@mui/material/styles"
 
@@ -7,15 +9,18 @@ import "@fontsource/roboto/400.css"
 import "@fontsource/roboto/500.css"
 import "@fontsource/roboto/700.css"
 
-import TemplateNav from "./components/TemplateNav"
-import Home from "./pages/Home"
-import List from "./pages/List"
-import Vehicle from "./pages/Vehicle"
-import User from "./pages/User"
-import Profile from "./pages/Profile"
-import Register from "./pages/Register"
-import Login from "./pages/Login"
-import { ResearchInfos } from "./contexts/ResearchInfos"
+import TemplateNav from "./components/TemplateNav";
+import Home from "./pages/Home";
+import List from "./pages/List";
+import Vehicle from "./pages/Vehicle";
+import User from "./pages/User";
+import Profile from "./pages/Profile";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import Suggest from "./pages/Suggest";
+import Messages from "./pages/Messages";
+
+import { ResearchInfos } from "./contexts/ResearchInfos";
 
 import "./styles/App.scss"
 
@@ -23,23 +28,23 @@ import theme from "./services/theme"
 function App() {
   return (
     <ResearchInfos>
-
-          <ThemeProvider theme={theme}>
-            <Router>
-              <Routes>
-                <Route path="" element={<TemplateNav />}>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/list" element={<List />} />
-                  <Route path="/vehicle" element={<Vehicle />} />
-                  <Route path="/user" element={<User />} />
-                  <Route path="/profile" element={<Profile />} />
-                  <Route path="/register" element={<Register />} />
-                  <Route path="/login" element={<Login />} />
-                </Route>
-              </Routes>
-            </Router>
-          </ThemeProvider>
-
+      <ThemeProvider theme={theme}>
+        <Router>
+          <Routes>
+            <Route path="" element={<TemplateNav />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/list" element={<List />} />
+              <Route path="/vehicle" element={<Vehicle />} />
+              <Route path="/user" element={<User />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/suggest" element={<Suggest />} />
+              <Route path="/messages" element={<Messages />} />
+            </Route>
+          </Routes>
+        </Router>
+      </ThemeProvider>
     </ResearchInfos>
   )
 }
