@@ -57,6 +57,7 @@ export default function ContainerResponsive() {
                 >
                   <AspectRatio
                     variant="soft"
+                    className="text-center text-2xl"
                     sx={{
                       flexGrow: 1,
                       display: "contents",
@@ -64,13 +65,7 @@ export default function ContainerResponsive() {
                         "clamp(0px, (100% - 360px) * 999, min(calc(100% / (16 / 9)), 300px))",
                     }}
                   >
-                    <img
-                      src={
-                        "https://images.unsplash.com/photo-1492305175278-3b3afaa2f31f?auto=format&fit=crop&w=2000"
-                      }
-                      loading="lazy"
-                      alt=""
-                    />
+                    {vehicle.description}
                   </AspectRatio>
                   <Box
                     sx={{

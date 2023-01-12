@@ -15,15 +15,18 @@ function handlerMenu(){
 function Header() {
   return (
     <header connexion="connexion" className="header">
-      <Link to="/home" className="header__title">
+      <Link to="/home" className="header__logo">
         <OutboundIcon />
-        <span>Geeks on Wheels</span>
+        <span className="header__title">
+          <span>Geeks&nbsp;</span>
+          <span>on Wheels</span>
+        </span>
       </Link>
       <Button
         className="header__menu" 
         variant="contained" 
-        startIcon={<MenuIcon fontSize="large" />} 
-        endIcon={<AccountBoxIcon fontSize="large" />}
+        startIcon={<AccountBoxIcon className="isNoMobile" />} 
+        endIcon={<MenuIcon />}
         onClick={handlerMenu}
         >
           <span className="srOnly">Menu Connexion</span>

@@ -48,3 +48,9 @@ html {
     white-space: nowrap;
     border: 0;
   }
+
+  .isNoMobile{
+    @media screen and (max-width: 767px) {
+      display: none !important;
+    }
+  }
