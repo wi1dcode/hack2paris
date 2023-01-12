@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import { StyledEngineProvider, CssVarsProvider } from "@mui/joy/styles"
 
 import { ThemeProvider } from "@mui/material/styles"
 
@@ -24,9 +23,8 @@ import theme from "./services/theme"
 function App() {
   return (
     <ResearchInfos>
-      <ThemeProvider theme={theme}>
-        <StyledEngineProvider injectFirst>
-          <CssVarsProvider>
+
+          <ThemeProvider theme={theme}>
             <Router>
               <Routes>
                 <Route path="" element={<TemplateNav />}>
@@ -40,9 +38,8 @@ function App() {
                 </Route>
               </Routes>
             </Router>
-          </CssVarsProvider>
-        </StyledEngineProvider>
-      </ThemeProvider>
+          </ThemeProvider>
+
     </ResearchInfos>
   )
 }
