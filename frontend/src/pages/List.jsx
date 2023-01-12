@@ -1,7 +1,12 @@
-import React from "react";
+import PopUp from "../components/PopUp";
 
 function List() {
-  return <main className="list">LIST</main>;
+
+  return (
+    <main className="list">
+      <PopUp />
+    </main>
+  )
 }
 
 export default List;

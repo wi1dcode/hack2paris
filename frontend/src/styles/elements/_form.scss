@@ -6,8 +6,13 @@
     justify-content: center;
     gap: 2rem;
 
+    &--only{
+        height: calc(100vh - 88px);
+    }
+
     input, label, textarea, fieldset, p{
         color: $secondaryContrast;
+        width: 100%;
     }
 
     p{
