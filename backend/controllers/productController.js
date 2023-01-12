@@ -7,7 +7,7 @@ class productController {
     try {
       const products = await Product.find();
       res.json(products);
-      return res.status(200);
+      return;
     } catch (e) {
       res.status(400).json({ message: "Error get users" });
     }
@@ -18,7 +18,7 @@ class productController {
       const { _id } = req.body;
       const products = await Product.findOne(_id);
       res.json(products);
-      return res.status(200);
+      return;
     } catch (e) {
       res.status(400).json({ message: "Error get product" });
     }
@@ -39,6 +39,7 @@ class productController {
         start_date,
         end_date,
         photo,
+        owner,
       } = req.body;
       const product = new Product({
         name,
@@ -49,6 +50,7 @@ class productController {
         start_date,
         end_date,
         photo,
+        owner,
       });
       await product.save();
       return res.json({ message: "Products posted !" });

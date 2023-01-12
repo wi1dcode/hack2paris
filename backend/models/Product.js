@@ -4,6 +4,11 @@ const Product = new Schema(
   {
     name: { type: String, unique: true, required: true },
     price: { type: Number, required: true },
+    owner: {
+      type: Schema.Types.ObjectId,
+      unique: true,
+      required: true,
+    },
     isAvailable: { type: Boolean, required: true },
     description: { type: String, required: true },
     category: { type: String, required: true },

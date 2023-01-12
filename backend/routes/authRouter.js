@@ -1,8 +1,8 @@
-const Router = require("express")
-const router = new Router()
-const controller = require("../controllers/authController")
-const { check } = require("express-validator")
-const authMiddleware = require("../middlewares/authMiddleware")
+const Router = require("express");
+const router = new Router();
+const controller = require("../controllers/authController");
+const { check } = require("express-validator");
+const authMiddleware = require("../middlewares/authMiddleware");
 
 // Routes
 
@@ -16,8 +16,8 @@ router.post(
     }),
   ],
   controller.signup
-)
-router.post("/login", controller.login)
-router.get("/users", controller.getUsers)
+);
+router.post("/login", controller.login);
+router.get("/users", authMiddleware, controller.getUsers);
 
-module.exports = router
+module.exports = router;
