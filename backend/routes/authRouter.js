@@ -1,11 +1,13 @@
 const Router = require("express");
 const router = new Router();
-const controller = require("../controllers/authController");
+const authController = require("../controllers/authController");
 const { check } = require("express-validator");
 const authMiddleware = require("../middlewares/authMiddleware");
 
+// Routes
+
 router.post(
-  "/signup",
+  "/register",
   [
     check("username", "Username can not be empty").notEmpty(),
     check("password", "Password must be between 4 and 10 symboles")
@@ -22,9 +24,9 @@ router.post(
       .withMessage("Invalid email"),
     check("city", "City can not be empty").notEmpty(),
   ],
-  controller.signup
+  authController.signup
 );
-router.post("/login", controller.login);
-router.get("/users", authMiddleware, controller.getUsers);
+router.post("/login", authController.login);
+router.get("/users", authController.getUsers);
 
 module.exports = router;
