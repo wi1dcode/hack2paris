@@ -52,7 +52,7 @@ function Home() {
           </LocalizationProvider>
         </div>
         <Button className="acces-btn" variant="contained" type="submit">
-          Submit
+          Search
         </Button>
       </form>
     </div>
