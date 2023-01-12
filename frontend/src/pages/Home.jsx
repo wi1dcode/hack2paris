@@ -28,19 +28,14 @@ function Home() {
   }
 
   return (
-    <div>
-      Home
-      <form className="form" onSubmit={onSubmitSearchProducts}>
-        <div>
+    <main className="main homepage">
+      <form className="form form-home" onSubmit={onSubmitSearchProducts}>
           <TextField
             label="Where are you?"
-            helperText="Choose a location"
             id="demo-helper-text-aligned"
             value={whereInput}
             onInput={(e) => setWhereInput(e.target.value)}
           />
-        </div>
-        <div>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DesktopDatePicker
               label="Choose a date"
@@ -50,12 +45,11 @@ function Home() {
               renderInput={(params) => <TextField {...params} />}
             />
           </LocalizationProvider>
-        </div>
         <Button className="acces-btn" variant="contained" type="submit">
           Search
         </Button>
       </form>
-    </div>
+    </main>
   );
 }
 

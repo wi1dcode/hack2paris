@@ -18,16 +18,14 @@ html {
     position: relative;
     color : $secondaryContrast;
     background-color: $customMain;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
+    background-color: linear-gradient(180deg, rgba(1,19,43,1) 0%, rgba(1,19,43,1) 20%, rgba(33,44,108,1) 90%, rgba(64,74,134,1) 100%);
   }
   
   h1,
   h2,
   h3 {
     font-family: "Vanadine", "Space Mono", monospace, sans-serif;
-    //font-weight: normal;
+    font-weight: bold;
   }
   
   /* Button */
