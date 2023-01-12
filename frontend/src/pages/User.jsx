@@ -1,9 +1,7 @@
+import React from "react";
+
 function User() {
-    return (
-      <main className="user">
-        USER
-      </main>
-    );
-  }
-  
-  export default User;
+  return <main>User</main>;
+}
+
+export default User;

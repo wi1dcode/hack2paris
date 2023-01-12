@@ -1,9 +1,7 @@
+import React from "react";
+
 function Profile() {
-    return (
-      <main className="profile">
-        PROFILE
-      </main>
-    );
-  }
-  
-  export default Profile;
+  return <main>Profile</main>;
+}
+
+export default Profile;

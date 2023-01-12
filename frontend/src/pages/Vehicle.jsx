@@ -1,9 +1,7 @@
+import React from "react";
+
 function Vehicle() {
-    return (
-        <main className="vehicle">
-            VEHICULE
-        </main>
-    );
+  return <main>Vehicle</main>;
 }
 
 export default Vehicle;
