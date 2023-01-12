@@ -18,32 +18,65 @@
   
 .header{
     position: relative;
-    padding: 1rem 2rem;
+    padding: 1rem;
     background-color: rgba(1, 19, 43, 0.5);
     display: flex;
     justify-content: space-between;
+
+    @media screen and (min-width: 768px) {
+        padding: 1rem 2rem;
+    }
 
     a{
         text-decoration: none;
     }
 
-    &__title{
+    &__logo{
         color: $primaryMain;
+        font-family: $fontLogo;
 
-        svg, span{
+        svg{
             display: inline-block;
             vertical-align: top;
             font-size: 3rem;
+            @media screen and (max-width: 767px) {
+                vertical-align: middle;
+            }
         }
+    }
+
+    &__title{
+        padding: 0 0.75rem;
+        font-size: 1.5rem;
+        display: inline-block;
+        vertical-align: top;
+        @media screen and (max-width: 767px) {
+            padding-top: 0.2rem;
+            vertical-align: middle;
+        }
+
         span{
-            font-family: $fontLogo;
-            padding: 0 0.75rem;
+            display: block;
+            @media screen and (min-width: 768px) {
+                display: inline;
+                font-size: 3rem;
+            }
         }
     }
 
     button.header__menu{
-        padding: 0.75rem 1.25rem;
+        padding: 0.75rem 1rem;
         border-radius : 1rem;
+
+        @media screen and (min-width: 768px) {
+            padding: 0.75rem 1.25rem;
+        }
+
+        span{
+            @media screen and (max-width: 767px) {
+                margin : 0;
+            }
+        }
 
         svg{
             font-size: 2rem;
@@ -53,7 +86,7 @@
     &__panel{
         position: absolute;
         right: 2rem;
-        top: 6rem;
+        top: 4rem;
         z-index: 100;
         width: 200px;
         background-color: white;
@@ -63,6 +96,10 @@
         height: 0;
         overflow: hidden;
         transition: opacity 2s ease-out, height 0.1s linear 2s;
+
+        @media screen and (max-width: 767px) {
+            top: 6rem;
+        }
 
         &.opened{
             opacity: 1;
@@ -78,11 +115,13 @@
 
                 a{
                     color: $primaryMain;
+                    font-weight: bold;
                 }
 
                 button{
                     color: $secondaryMain;
                     background-color: transparent;
+                    font-weight: bold;
                 }
             
                 &:hover{
