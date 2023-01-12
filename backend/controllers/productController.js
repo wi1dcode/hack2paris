@@ -7,7 +7,7 @@ class productController {
     try {
       const products = await Product.find();
       res.json(products);
-      res.json("getproducts: server work");
+      return res.status(200);
     } catch (e) {
       res.status(400).json({ message: "Error get users" });
     }
@@ -18,7 +18,7 @@ class productController {
       const { _id } = req.body;
       const products = await Product.findOne(_id);
       res.json(products);
-      res.json("getproductsbyid: server work");
+      return res.status(200);
     } catch (e) {
       res.status(400).json({ message: "Error get product" });
     }
