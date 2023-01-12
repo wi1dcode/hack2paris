@@ -23,7 +23,6 @@ import "./styles/App.scss";
 
 import theme from "./services/theme";
 
-
 function App() {
   return (
     <ThemeProvider theme={theme}>
