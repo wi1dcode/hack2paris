@@ -8,6 +8,7 @@ module.exports = function (req, res, next) {
       return res.status(403).json({ message: "You need to login first" });
     }
     const decodedData = jwt.verify(token, process.env.SECRET);
+    console.log(decodedData)
     req.user = decodedData;
     next();
   } catch (e) {

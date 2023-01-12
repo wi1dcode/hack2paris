@@ -4,8 +4,6 @@ const controller = require("../controllers/authController");
 const { check } = require("express-validator");
 const authMiddleware = require("../middlewares/authMiddleware");
 
-// Routes
-
 router.post(
   "/signup",
   [
@@ -13,7 +11,7 @@ router.post(
     check("password", "Password must be between 4 and 10 symboles")
       .isLength({
         min: 4,
-        max: 10,
+        max: 15,
       })
       .notEmpty(),
     check("mail")

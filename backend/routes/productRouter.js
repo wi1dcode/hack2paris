@@ -7,6 +7,7 @@ const authMiddleware = require("../middlewares/authMiddleware");
 router.use(authMiddleware);
 
 router.post("/", controller.postProduct);
+router.post("/:id/rents", controller.rentProduct)
 router.get("/", controller.getProducts);
 router.get("/:id", controller.getProductById);
 

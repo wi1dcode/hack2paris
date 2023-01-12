@@ -34,7 +34,6 @@ class authController {
       const user = new User({
         username,
         password: hashPassword,
-        location_product,
         mail,
         city,
       });
