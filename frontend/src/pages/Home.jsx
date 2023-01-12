@@ -29,9 +29,11 @@ function Home() {
 
   return (
     <main className="main homepage">
-      <form className="form form-home" onSubmit={onSubmitSearchProducts}>
+      <form className="form form--only" onSubmit={onSubmitSearchProducts}>
         <div>
           <TextField
+            className="form__fieldset"
+            helperText="Type the place where you want to rent"
             label="Where are you?"
             id="demo-helper-text-aligned"
             value={whereInput}
@@ -41,6 +43,7 @@ function Home() {
         <div>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DesktopDatePicker
+              className="form__fieldset"
               label="Choose a date"
               inputFormat="DD/MM/YYYY"
               value={dateRaw}
