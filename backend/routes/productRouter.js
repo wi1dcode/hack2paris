@@ -4,7 +4,7 @@ const controller = require("../controllers/productController");
 const { check } = require("express-validator");
 const authMiddleware = require("../middlewares/authMiddleware");
 
-router.use(authMiddleware);
+// router.use(authMiddleware);
 
 router.post("/", controller.postProduct);
 router.post("/:id/rents", controller.rentProduct)
