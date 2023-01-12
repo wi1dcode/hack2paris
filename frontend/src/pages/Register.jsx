@@ -30,7 +30,8 @@ function Register() {
   return (
     <div>
       Register
-      <form className="form" onSubmit={onSubmit}>
+      <form cclassName="form form--only" onSubmit={onSubmit}>
+
         <div>
           <TextField
             helperText="Please enter your username"

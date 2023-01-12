@@ -28,7 +28,7 @@ function Login() {
   return (
     <div>
       Login
-      <form className="form" onSubmit={onSubmitLogin}>
+      <form className="form form--only" onSubmit={onSubmitLogin}>
         <div>
           <TextField
             helperText="Please enter your username"
@@ -38,7 +38,6 @@ function Login() {
             onInput={(e) => setUsernameLog(e.target.value)}
           />
         </div>
-        {/* test */}
         <div>
           <TextField
             helperText="Please enter your password"

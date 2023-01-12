@@ -8,6 +8,7 @@ import Typography from "@mui/joy/Typography"
 import Link from "@mui/joy/Link"
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded"
 import { StyledEngineProvider, CssVarsProvider } from "@mui/joy/styles"
+import PopUp from "../components/PopUp";
 import axios from "axios"
 
 export default function ContainerResponsive() {
@@ -27,7 +28,7 @@ export default function ContainerResponsive() {
   if (!vehicles) return null
 
   return (
-    <div className="flex justify-center flex-wrap w-full gap-6">
+    <main className="flex justify-center flex-wrap w-full gap-6">
       {vehicles.map((vehicle) => {
         return (
           <CssVarsProvider>
@@ -131,6 +132,7 @@ export default function ContainerResponsive() {
           </CssVarsProvider>
         )
       })}
-    </div>
+      <PopUp />
+    </main>
   )
 }
