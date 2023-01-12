@@ -6,7 +6,8 @@ class productController {
   async getProducts(req, res) {
     try {
       const products = await Product.find()
-      return res.status(200).json(products)
+      res.json(products)
+      return res.status(200)
     } catch (e) {
       res.status(400).json({ message: "Error get users" })
     }
