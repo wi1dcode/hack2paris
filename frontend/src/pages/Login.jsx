@@ -31,6 +31,7 @@ function Login() {
       <form className="form form--only" onSubmit={onSubmitLogin}>
         <div>
           <TextField
+            className="form__fieldset"
             helperText="Please enter your username"
             id="demo-helper-text-aligned"
             label="Username"
@@ -40,6 +41,7 @@ function Login() {
         </div>
         <div>
           <TextField
+            className="form__fieldset"
             helperText="Please enter your password"
             id="demo-helper-text-aligned"
             label="Password"

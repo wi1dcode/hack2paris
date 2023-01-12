@@ -10,9 +10,36 @@
         height: calc(100vh - 88px);
     }
 
-    input, label, textarea, fieldset, p{
+    .form__fieldset > div{
+        &:hover{
+            > fieldset{
+                border-color: $primaryContrast;
+            }
+            input, textarea{
+                border-color: $primaryContrast;
+            }
+        }
+        &:focus,
+        &:focus-visible,
+        &:focus-within,
+        &:active{
+            > fieldset{
+                border-color: $primaryMain;
+            }
+            input, textarea{
+                border-color: $primaryMain;
+            }
+        }
+
+    }
+
+    input, label, textarea, p{
         color: $secondaryContrast;
         width: 100%;
+    }
+
+    button > svg{
+        color: $secondaryContrast;
     }
 
     p{

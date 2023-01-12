@@ -30,10 +30,10 @@ function Register() {
   return (
     <div>
       Register
-      <form cclassName="form form--only" onSubmit={onSubmit}>
-
+      <form className="form form--only" onSubmit={onSubmit}>
         <div>
           <TextField
+            className="form__fieldset"
             helperText="Please enter your username"
             id="demo-helper-text-aligned"
             label="Username"
@@ -43,6 +43,7 @@ function Register() {
         </div>
         <div>
           <TextField
+            className="form__fieldset"
             helperText="Please enter your email"
             id="demo-helper-text-aligned"
             label="Email"
@@ -53,6 +54,7 @@ function Register() {
         </div>
         <div>
           <TextField
+            className="form__fieldset"
             helperText="Please enter your city"
             id="demo-helper-text-aligned"
             label="City"
@@ -62,6 +64,7 @@ function Register() {
         </div>
         <div>
           <TextField
+            className="form__fieldset"
             helperText="Please enter your password"
             id="demo-helper-text-aligned"
             label="Password"
