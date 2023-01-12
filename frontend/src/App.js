@@ -17,6 +17,7 @@ import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import { ResearchInfos } from "./contexts/ResearchInfos";
+import { StyledEngineProvider, CssVarsProvider } from "@mui/joy/styles";
 
 import "./styles/App.scss";
 
@@ -24,23 +25,27 @@ import theme from "./services/theme";
 
 function App() {
   return (
-    <ResearchInfos>
-      <ThemeProvider theme={theme}>
-        <Router>
-          <Routes>
-            <Route path="" element={<TemplateNav />}>
-              <Route path="/" element={<Home />} />
-              <Route path="/list" element={<List />} />
-              <Route path="/vehicle" element={<Vehicle />} />
-              <Route path="/user" element={<User />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/login" element={<Login />} />
-            </Route>
-          </Routes>
-        </Router>
-      </ThemeProvider>
-    </ResearchInfos>
+    <StyledEngineProvider injectFirst>
+      <CssVarsProvider>
+        <ResearchInfos>
+          <ThemeProvider theme={theme}>
+            <Router>
+              <Routes>
+                <Route path="" element={<TemplateNav />}>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/list" element={<List />} />
+                  <Route path="/vehicle" element={<Vehicle />} />
+                  <Route path="/user" element={<User />} />
+                  <Route path="/profile" element={<Profile />} />
+                  <Route path="/register" element={<Register />} />
+                  <Route path="/login" element={<Login />} />
+                </Route>
+              </Routes>
+            </Router>
+          </ThemeProvider>
+        </ResearchInfos>
+      </CssVarsProvider>
+    </StyledEngineProvider>
   );
 }
 
