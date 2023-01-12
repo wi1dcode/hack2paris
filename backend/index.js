@@ -22,6 +22,7 @@ app.use("/auth", authRouter);
 app.use("/", productRouter);
 
 // Connecting mongoDB
+mongoose.set("strictQuery", false)
 
 const start = async () => {
   try {
