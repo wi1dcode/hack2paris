@@ -1,0 +1,10 @@
+.main{
+    padding: 0 1rem 1rem;
+
+    &--form{
+        min-height: calc(100vh - 105px);
+    }
+    &--nav{
+        min-height: calc(100vh - 171px);
+    }
+}

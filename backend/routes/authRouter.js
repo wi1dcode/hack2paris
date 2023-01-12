@@ -10,11 +10,14 @@ router.post(
   "/signup",
   [
     check("username", "Username can not be empty").notEmpty(),
-    check("password", "Password must be between 4 and 10 symboles").isLength({
-      min: 4,
-      max: 10,
-    }),
+    check("password", "Password must be between 4 and 10 symboles")
+      .isLength({
+        min: 4,
+        max: 10,
+      })
+      .notEmpty(),
     check("mail")
+      .notEmpty()
       .trim()
       .normalizeEmail()
       .isEmail()
@@ -25,6 +28,7 @@ router.post(
           throw new Error("Email already in use")
         }
       }),
+    check("city", "City can not be empty").notEmpty(),
   ],
   controller.signup
 )

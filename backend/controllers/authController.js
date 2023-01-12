@@ -67,8 +67,9 @@ class authController {
     try {
       const users = await User.find()
       res.json(users)
-      res.json("getusers: server work")
-    } catch (e) {}
+    } catch (e) {
+      res.status(400).json({ message: "Error get users" })
+    }
   }
 }
 
