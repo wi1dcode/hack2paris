@@ -22,8 +22,9 @@ class authController {
       // destruct
       const { username, password, mail, city } = req.body
       // find user in db, if not continue
-      const candidate = await User.findOne({ username })
-      if (candidate) {
+      const usernameExist = await User.findOne({ username })
+      const emailExist = await User.findOne({ mail })
+      if (usernameExist || emailExist) {
         return res.status(400).json({ message: "Already registered" })
       }
       // hash password

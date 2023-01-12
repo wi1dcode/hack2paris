@@ -1,10 +1,10 @@
-const Router = require("express");
-const router = new Router();
-const controller = require("../controllers/productController");
-const { check } = require("express-validator");
+const Router = require("express")
+const router = new Router()
+const controller = require("../controllers/productController")
+const { check } = require("express-validator")
 
-router.post("/product", controller.postProduct);
-router.get("/products", controller.getProducts);
-router.get("/product/:id", controller.getProductById);
+router.post("/product", controller.postProduct)
+router.get("/products", controller.getProducts)
+router.get("/product/:id", controller.getProductById)
 
-module.exports = router;
+module.exports = router
