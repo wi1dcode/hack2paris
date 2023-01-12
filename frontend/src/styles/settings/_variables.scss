@@ -1,16 +1,17 @@
 // COLORS
-$primaryDark: #404a86; // dark blue
-$primaryMain: #5c6bc0; // blue
-$primaryLight: #7c88cc;  // light blue
+$primaryDark: #1a746b; // dark green
+$primaryMain: #26a69a;  // green
+$primaryLight: #51b7ae; // light green
 $primaryContrast: #FFFFFF; // white
-$secondaryDark: #1a746b; // dark green
-$secondaryMain: #26a69a;  // green
-$secondaryLight: #51b7ae; // light green
+$secondaryDark:  #404a86; // dark blue
+$secondaryMain:  #5c6bc0; // blue
+$secondaryLight:  #7c88cc;  // light blue
 $secondaryContrast: #FFFFFF; // white
-$customMain: #021b3d; // navy background
+$customMain: #01132b; // navy background
 $customContrast: #FFFFFF; // white
 
 // FONTS
+$fontLogo: "blade_runner_movie_fontRg", "Vanadine", monospace, sans-serif !default;
 $fontTitle: "Vanadine", 'Space Mono', monospace, sans-serif !default;
 $fontText: "Roboto", Arial, Helvetica, sans-serif !default;
 
@@ -21,3 +22,5 @@ $textMD: 1.5rem; // 24px
 $textLG: 2rem; // 32px
 $textXL: 3rem; // 48px
 $textXXL: 4rem; // 64px
+
+$shadow: rgba(255,255, 255, 0.35) 0px 5px 15px;
