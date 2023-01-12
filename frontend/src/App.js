@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import { ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles"
 
-import "@fontsource/roboto/300.css";
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/500.css";
-import "@fontsource/roboto/700.css";
+import "@fontsource/roboto/300.css"
+import "@fontsource/roboto/400.css"
+import "@fontsource/roboto/500.css"
+import "@fontsource/roboto/700.css"
 
 import TemplateNav from "./components/TemplateNav";
 import Home from "./pages/Home";
@@ -22,10 +22,9 @@ import Messages from "./pages/Messages";
 import { ResearchInfos } from "./contexts/ResearchInfos";
 import { UserInfos } from "./contexts/UserInfos.js";
 
-import "./styles/App.scss";
+import "./styles/App.scss"
 
-import theme from "./services/theme";
-
+import theme from "./services/theme"
 function App() {
   return (
     <UserInfos>
@@ -52,4 +51,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
