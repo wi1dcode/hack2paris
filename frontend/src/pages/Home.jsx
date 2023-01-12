@@ -1,7 +1,12 @@
-import React from "react"
+//import MainHome from "./home/MainHome";
 
 function Home() {
-  return <div>Home</div>
+  return (
+    <main className="home">
+      HOME
+    </main>
+  );
 }
 
-export default Home
+export default Home;
+

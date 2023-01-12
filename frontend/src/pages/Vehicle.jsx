@@ -1,7 +1,7 @@
 import React from "react";
 
 function Vehicle() {
-  return <div>Vehicle</div>;
+  return <main>Vehicle</main>;
 }
 
 export default Vehicle;
