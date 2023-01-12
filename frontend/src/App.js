@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 
 import { ThemeProvider } from "@mui/material/styles";
 
@@ -19,29 +20,33 @@ import Login from "./pages/Login";
 import Suggest from "./pages/Suggest";
 import Messages from "./pages/Messages";
 
+import { ResearchInfos } from "./contexts/ResearchInfos";
+
 import "./styles/App.scss";
 
 import theme from "./services/theme";
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Router>
-        <Routes>
-          <Route path="" element={<TemplateNav />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/list" element={<List />} />
-            <Route path="/vehicle" element={<Vehicle />} />
-            <Route path="/user" element={<User />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/suggest" element={<Suggest />} />
-            <Route path="/messages" element={<Messages />} />
-          </Route>
-        </Routes>
-      </Router>
-    </ThemeProvider>
+    <ResearchInfos>
+      <ThemeProvider theme={theme}>
+        <Router>
+          <Routes>
+            <Route path="" element={<TemplateNav />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/list" element={<List />} />
+              <Route path="/vehicle" element={<Vehicle />} />
+              <Route path="/user" element={<User />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/suggest" element={<Suggest />} />
+              <Route path="/messages" element={<Messages />} />
+            </Route>
+          </Routes>
+        </Router>
+      </ThemeProvider>
+    </ResearchInfos>
   );
 }
 

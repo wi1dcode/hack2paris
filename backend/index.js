@@ -17,9 +17,9 @@ app.use(
   })
 );
 
-app.use(express.json());
-app.use("/auth", authRouter);
-app.use("/", productRouter);
+app.use(express.json());;
+app.use("/auth", authRouter);;
+app.use("/product", productRouter);;
 
 // Connecting mongoDB
 mongoose.set("strictQuery", false)
