@@ -38,8 +38,8 @@ export default function ContainerResponsive() {
     return dateString;
   }
 
-  /* console.log(dateToString(vehicles[0].rentings[0])); */
-
+  /* console.log(dateToString(vehicles[0].rentings[0]));
+   */
   return (
     <main className="flex justify-center flex-wrap w-full gap-6">
       <div>
