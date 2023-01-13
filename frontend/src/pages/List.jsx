@@ -16,7 +16,6 @@ export default function ContainerResponsive() {
   const { isLogged } = useContext(UserInfosContext)
   const [vehicles, setVehicles] = useState()
   const [displayPopup, setDisplayPopup] = useState()
-  const [user, setUser] = useState()
 
   useEffect(() => {
     axios
@@ -118,7 +117,10 @@ export default function ContainerResponsive() {
                     </AspectRatio>
                     <Box sx={{ display: "flex", gap: 1.5, mt: "auto" }}>
                       <Avatar variant="soft" color="neutral">
-                        {vehicle.owner.substr(0, 1)}
+                        <img
+                          src="https://api.lorem.space/image/face?w=120&h=120&hash=bart89fe"
+                          alt=""
+                        />
                       </Avatar>
                       <div className="w-full">
                         <Typography level="body2">Posted by</Typography>
