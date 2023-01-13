@@ -1,54 +1,68 @@
 .form {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 
-    &--only{
-        height: calc(100vh - 88px);
+  &--only {
+    height: calc(100vh - 88px);
+  }
+
+  .form__fieldset > div {
+    &:hover {
+      > fieldset {
+        border-color: $primaryContrast;
+      }
+      input {
+        border-color: $primaryContrast;
+      }
     }
-
-    .form__fieldset > div{
-        &:hover{
-            > fieldset{
-                border-color: $primaryContrast;
-            }
-            input, textarea{
-                border-color: $primaryContrast;
-            }
-        }
-        &:focus,
-        &:focus-visible,
-        &:focus-within,
-        &:active{
-            > fieldset{
-                border-color: $primaryMain;
-            }
-            input, textarea{
-                border-color: $primaryMain;
-            }
-        }
-
+    &:focus,
+    &:focus-visible,
+    &:focus-within,
+    &:active {
+      > fieldset {
+        border-color: $primaryMain;
+      }
+      input {
+        border-color: $primaryMain;
+      }
     }
+  }
 
-    input, label, textarea, p{
-        color: $secondaryContrast;
-        width: 100%;
+  input,
+  label,
+  textarea,
+  p {
+    color: $secondaryContrast;
+    width: 100%;
+  }
+
+  button > svg {
+    color: $secondaryContrast;
+  }
+
+  p {
+    margin: 3px 0 0;
+  }
+
+  input,
+  fieldset {
+    border-color: $secondaryContrast;
+  }
+
+  .textarea {
+    border: 1px solid $primaryMain;
+    border-radius: 4px;
+    padding: 16.5px 14px;
+    height: 140px;
+    color: black;
+
+    &:hover,
+    &:focus {
+      border-color: $primaryDark;
     }
-
-    button > svg{
-        color: $secondaryContrast;
-    }
-
-    p{
-        margin: 3px 0 0;
-    }
-
-    input, textarea, fieldset{
-        border-color: $secondaryContrast;
-    }
-
-
+  }
 }
