@@ -29,7 +29,6 @@ function Register() {
 
   return (
     <div>
-      Register
       <form className="form form--only" onSubmit={onSubmit}>
         <div>
           <TextField

@@ -15,7 +15,7 @@ function handlerMenu(){
 function Header() {
   return (
     <header connexion="connexion" className="header">
-      <Link to="/home" className="header__logo">
+      <Link to="/" className="header__logo">
         <OutboundIcon />
         <span className="header__title">
           <span>Geeks&nbsp;</span>

@@ -27,7 +27,6 @@ function Login() {
 
   return (
     <div>
-      Login
       <form className="form form--only" onSubmit={onSubmitLogin}>
         <div>
           <TextField

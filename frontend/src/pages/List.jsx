@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
+import UserInfosContext from "../contexts/UserInfos"
 import AspectRatio from "@mui/joy/AspectRatio"
 import Avatar from "@mui/joy/Avatar"
 import Box from "@mui/joy/Box"
@@ -8,11 +9,13 @@ import Typography from "@mui/joy/Typography"
 import Link from "@mui/joy/Link"
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded"
 import { StyledEngineProvider, CssVarsProvider } from "@mui/joy/styles"
-import PopUp from "../components/PopUp";
+import PopUp from "../components/PopUp"
 import axios from "axios"
 
 export default function ContainerResponsive() {
+  const { isLogged } = useContext(UserInfosContext)
   const [vehicles, setVehicles] = useState()
+  const [displayPopup, setDisplayPopup] = useState()
   const [user, setUser] = useState()
 
   useEffect(() => {
@@ -80,7 +83,6 @@ export default function ContainerResponsive() {
                       <div>
                         <p
                           className="card__title"
-                          overlay
                           underline="none"
                           sx={{
                             color: "text.primary",
@@ -118,12 +120,22 @@ export default function ContainerResponsive() {
                       <Avatar variant="soft" color="neutral">
                         {vehicle.owner.substr(0, 1)}
                       </Avatar>
-                      <div>
+                      <div className="w-full">
                         <Typography level="body2">Posted by</Typography>
                         <Typography fontWeight="lg" level="body2">
                           {vehicle.owner}
                         </Typography>
                       </div>
+                      <button
+                        className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg"
+                        onClick={() => {
+                          isLogged
+                            ? setDisplayPopup(false)
+                            : setDisplayPopup(true)
+                        }}
+                      >
+                        Contact
+                      </button>
                     </Box>
                   </Box>
                 </Card>
@@ -132,7 +144,7 @@ export default function ContainerResponsive() {
           </CssVarsProvider>
         )
       })}
-      <PopUp />
+      {displayPopup && <PopUp />}
     </main>
   )
 }
