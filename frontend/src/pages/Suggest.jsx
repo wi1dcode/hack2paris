@@ -1,8 +1,9 @@
 import TextField from "@mui/material/TextField"
 import Button from "@mui/material/Button"
 import { Navigate } from "react-router-dom"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import axios from "axios"
+import jwtdecode from "jwt-decode"
 
 function Suggest() {
   const [title, setTitle] = useState("")
@@ -10,18 +11,27 @@ function Suggest() {
   const [city, setCity] = useState("")
   const [picture, setPicture] = useState("")
   const [description, setDescription] = useState("")
+  const [username, setUsername] = useState("")
 
   async function addSugest(event) {
     event.preventDefault()
 
     await axios
-      .post("http://localhost:5001/product", {
-        name: title,
-        price: price,
-        city: city,
-        photo: picture,
-        description: description,
-      })
+      .post(
+        "http://localhost:5001/product",
+        {
+          name: title,
+          price: price,
+          city: city,
+          photo: picture,
+          description: description,
+        },
+        {
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      )
       .then(() => {
         Navigate("/list", { replace: true })
       })
