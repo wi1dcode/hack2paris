@@ -129,7 +129,7 @@ export default function ContainerResponsive() {
                         </Typography>
                       </div>
                       <button
-                        className="bg-[#26A69A] hover:bg-[#1A746B] text-white font-bold py-2 px-4 rounded-lg"
+                        className="contactButton"
                         onClick={() => {
                           isLogged
                             ? setDisplayPopup(false)

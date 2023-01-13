@@ -1,13 +1,27 @@
-.iconLink{
-    color: $secondaryContrast;
-    text-decoration: none;
-    &:hover{
-        color: $primaryDark;
-        span{
-            text-decoration: underline;
-        }
+.iconLink {
+  color: $secondaryContrast;
+  text-decoration: none;
+  &:hover {
+    color: $primaryDark;
+    span {
+      text-decoration: underline;
     }
-    &.active{
-        color: $primaryMain;
-    }
+  }
+  &.active {
+    color: $primaryMain;
+  }
+}
+
+.contactButton {
+  font-size: 14px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  color: white;
+  padding: 6px 16px;
+  cursor: pointer;
+  background-color: #26a69a;
+  font-weight: 500;
+  border-radius: 16px;
+  &:hover {
+    background-color: #1a746b;
+  }
 }
