@@ -10,7 +10,7 @@ function PopUp() {
     <div>
       {
         !isLogged && (
-          <div className="popUp">
+          <div className="popUp text-center">
             <p className="popUp__text">You need to log to contact the Owner</p>
             <div className="access">
               <Button
