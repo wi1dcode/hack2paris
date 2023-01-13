@@ -1,32 +1,37 @@
 .popUp {
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: $shadow;
-    padding: 20px;
-    position: absolute;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: $shadow;
+  padding: 20px;
+  position: absolute;
+  top: 250px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: rgba(255, 182, 193, 0.35) 0px 5px 15px;
+  border-radius: 1rem;
+  min-width: 335px;
+
+  @media screen and (min-width: 800px) {
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: rgba(255, 182, 193, 0.35) 0px 5px 15px;
-    border-radius: 1rem;
+  }
 
-    &__text {
-        margin: 20px;
-        font-size: 2rem;
-        font-family: $fontTitle;
-        color: $customMain;
+  &__text {
+    margin: 20px;
+    font-size: 2rem;
+    font-family: $fontTitle;
+    color: $customMain;
+  }
+
+  .access {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+
+    .access__btn {
+      flex: 0 0 auto;
+      width: 100px !important;
     }
-
-    .access {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        margin-top: 2rem;
-
-        .access__btn {
-            flex: 0 0 auto;
-            width: 100px !important;
-        }
-    }
+  }
 }
